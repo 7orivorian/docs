@@ -1,0 +1,147 @@
+site_name: 7orivorian | Docs
+# site_url: https://docs.7ori.dev
+site_author: 7orivorian
+site_description: >-
+  Documentation for all of 7orivorian's projects.
+
+# Repository
+repo_name: 7orivorian/Docs
+repo_url: https://github.com/7orivorian/Docs
+
+# Copyright
+copyright: Copyright &copy; 2024 <a href="https://github.com/7orivorian" target="_blank" rel="noopener">7orivorian</a>
+
+theme:
+  name: material
+  features:
+    - announce.dismiss
+    - content.action.view
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+      navigation.expand
+    - navigation.instant
+    - navigation.instant.prefetch
+    - search.share
+    - search.suggest
+    - content.tooltips
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - toc.follow
+  language: en
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: light
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to system preference
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: timeago
+  - git-committers:
+      repository: 7orivorian/Docs
+      branch: master
+  - minify:
+      minify_html: true
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Extra
+extra:
+  status:
+    new: Recently added
+    deprecated: Deprecated
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/7orivorian
+  projects:
+    wraith:
+      name: Wraith
+      repo: https://github.com/7orivorian/Wraith
+
+# Page tree
+nav:
+  - Home:
+      - index.md
+      - faq.md
+  - Wraith:
+      - wraith/overview.md
+      - wraith/importing.md
+      - wraith/building.md
+      - wraith/contributing.md
+      - wraith/license.md
+      - Usage:
+          - wraith/usage/subscribers.md
+          - wraith/usage/listeners.md
+          - wraith/usage/events.md
