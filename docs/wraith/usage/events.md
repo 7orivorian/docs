@@ -1,6 +1,6 @@
 # Events
 
-## Define
+## Definition
 
 Any object can be used as an event, but it's good practice to use standardized
 event classes. Events can be small, large, simple, or very complex. Anything
@@ -62,12 +62,12 @@ public class SunEvent {
 }
 ```
 
-## Dispatch
+## Dispatching
 
 To dispatch an event, call one of the `dispatch` methods defined in `EventBus`,
-passing your event as a parameter:
+passing your event as a parameter.
 
-```java
+``` java
 MessageEvent event = new MessageEvent("world greetings");
 
 EVENT_BUS.dispatch(event);

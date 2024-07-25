@@ -1,41 +1,80 @@
 # Listeners
 
-For class event listeners, you can define your listeners as follows:
+## Definition
 
-```java
-public class ExampleListener extends EventListener<MessageEvent> {
+=== "EventListener"
 
-    public ExampleListener() {
-        super(MessageEvent.class);
+    Extend the `EventListener<T>` class.
+
+    ```java
+    public class ExampleListener extends EventListener<MessageEvent> {
+    
+        public ExampleListener() {
+            super(MessageEvent.class);
+        }
+    
+        @Override
+        public void invoke(MessageEvent event) {
+            //...
+        }
     }
+    ```
 
-    @Override
-    public void invoke(MessageEvent event) {
-        event.setMessage("Hello world!");
-    }
-}
-```
+=== "LambdaEventListener"
 
-```java
-public class ExampleSubscriber extends Subscriber {
+    `LambdaEventListener` provides a concise way to create a listener.
+    
+    ```java
+    new LambdaEventListener<>(
+        MessageEvent.class,
+        event -> {//...}
+    )
+    ```
 
-    public ExampleSubscriber() {
-        // Register the listener
-        registerListener(new ExampleListener());
-    }
-}
-```
+## Registration
 
-Lambda event listeners provide a more concise way to achieve the same functionality:
+=== "EventListener"
 
-```java
-public class ExampleSubscriber extends Subscriber {
+    Listeners can be registered to a subsciber, 
+    
+    ```java hl_lines="6"
+    EventBus eventBus = new EventBus();
+    Subscriber subscriber = new Subscriber();
+    eventBus.subscribe(subscriber);
 
-    public ExampleSubscriber() {
-        // Register the listener
-        registerListener(
-                new LambdaEventListener<>(MessageEvent.class, event -> event.setMessage("Hello world!"))
-        );
-    }
-}
-```
+    // Assuming you've already defined a listener
+    subscriber.registerListener(new ExampleListener());
+    ```
+
+    or directly to an event bus.
+    ```java hl_lines="4"
+    EventBus eventBus = new EventBus();
+    
+    // Assuming you've already defined a listener
+    eventBus.register(new ExampleListener());
+    ```
+
+=== "LambdaEventListener"
+
+    Listeners can be registered to a subsciber, 
+    
+    ```java hl_lines="5-8"
+    EventBus eventBus = new EventBus();
+    Subscriber subscriber = new Subscriber();
+    eventBus.subscribe(subscriber);
+
+    subscriber.registerListener(new LambdaEventListener<>(
+            MessageEvent.class,
+            event -> {/*...*/}
+    ));
+    ```
+
+    or directly to an event bus.
+    ```java hl_lines="3-6"
+    EventBus eventBus = new EventBus();
+    
+    eventBus.register(new LambdaEventListener<>(
+            MessageEvent.class,
+            event -> {/*...*/}
+    ));
+    ```

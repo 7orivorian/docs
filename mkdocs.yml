@@ -147,3 +147,4 @@ nav:
           - wraith/usage/subscribers.md
           - wraith/usage/listeners.md
           - wraith/usage/events.md
+          - wraith/usage/event_types.md

@@ -1,6 +1,6 @@
 # Subscribers
 
-## Define a subscriber
+## Definition
 
 To define a subscriber, you have multiple options.
 
@@ -8,7 +8,7 @@ Extend the Subscriber class:
 
 ```java
 public class ExampleSubscriber extends Subscriber {
-// ...
+    // ...
 }
 ```
 
@@ -16,7 +16,7 @@ Implement the ISubscriber interface:
 
 ```java
 public class ExampleSubscriber implements ISubscriber {
-// ...
+    // ...
 }
 ```
 
@@ -27,7 +27,7 @@ in a variety of ways.
 
 Inside the subscriber itself.
 
-```java
+```java hl_lines="8"
 public class Consts {
     private static final IEventBus EVENT_BUS = new EventBus();
 }
@@ -40,7 +40,7 @@ public class ExampleSubscriber extends Subscriber {
 }
 ```
 
-```java
+```java hl_lines="12"
 public class Consts {
     private static final IEventBus EVENT_BUS = new EventBus();
 }
@@ -59,7 +59,7 @@ public class ExampleSubscriber extends Subscriber {
 
 Or externally.
 
-```java
+```java hl_lines="6"
 public class Example {
     
     private static final IEventBus EVENT_BUS = new EventBus();
@@ -70,7 +70,7 @@ public class Example {
 }
 ```
 
-```java
+```java hl_lines="4 7"
 public class Example {
     
     private static final IEventBus EVENT_BUS = new EventBus();

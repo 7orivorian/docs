@@ -4,7 +4,7 @@ Contributions are welcome! Feel free to open a pull request.
 
 ## Guidelines
 
-* Utilize similar [formatting](.editorconfig) and practices to the rest of the
+* Utilize similar [formatting](https://github.com/7orivorian/Wraith/blob/master/.editorconfig) and practices to the rest of the
   codebase.
 * Do not include workspace files (such as an `./.idea/` or `./target/`
   directory) in your pull request.
