@@ -1,5 +1,5 @@
 site_name: 7orivorian | Docs
-site_url: https://docs.7ori.dev
+#site_url: https://docs.7ori.dev
 site_author: 7orivorian
 site_description: >-
   Documentation for all of 7orivorian's projects.
@@ -11,6 +11,7 @@ repo_url: https://github.com/7orivorian/Docs
 # Copyright
 copyright: Copyright &copy; 2024 <a href="https://github.com/7orivorian" target="_blank" rel="noopener">7orivorian</a>
 
+# Theme
 theme:
   name: material
   features:
@@ -57,6 +58,7 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+# Plugins
 plugins:
   - search
   - git-revision-date-localized:
