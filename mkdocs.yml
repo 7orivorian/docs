@@ -1,5 +1,4 @@
 site_name: 7orivorian | Docs
-site_url: https://7orivorian.github.io/docs/
 site_author: 7orivorian
 site_description: >-
   Documentation for all of 7orivorian's projects.
@@ -55,22 +54,6 @@ theme:
     text: Roboto
     code: Roboto Mono
 
-extra_css:
-  - stylesheets/extra.css
-
-# Plugins
-plugins:
-  - search
-  - git-revision-date-localized:
-      type: timeago
-  - git-committers:
-      repository: 7orivorian/Docs
-      branch: master
-  - minify:
-      minify_html: true
-      minify_js: true
-      minify_css: true
-
 # Extensions
 markdown_extensions:
   - abbr
@@ -120,6 +103,22 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+
+extra_css:
+  - stylesheets/extra.css
+
+# Plugins
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: timeago
+  - git-committers:
+      repository: 7orivorian/Docs
+      branch: master
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
 
 # Extra
 extra:
