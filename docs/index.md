@@ -1,3 +1,3 @@
-# Welcome to MkDocs
+# Hello there!
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This site is host to the documentation for all my public projects!
