@@ -137,8 +137,6 @@ extra:
 nav:
   - Home:
       - index.md
-  - Test:
-      - test.md
   - Wraith:
       - wraith/overview.md
       - wraith/importing.md
