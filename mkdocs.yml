@@ -28,6 +28,7 @@ theme:
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
+    - content.code.select
     - toc.follow
   language: en
   palette:
