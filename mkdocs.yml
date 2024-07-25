@@ -66,6 +66,10 @@ plugins:
   - git-committers:
       repository: 7orivorian/Docs
       branch: master
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
 
 # Extensions
 markdown_extensions:
