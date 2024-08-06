@@ -5,8 +5,8 @@ site_description: >-
   Documentation for all of 7orivorian's projects.
 
 # Repository
-repo_name: 7orivorian/Docs
-repo_url: https://github.com/7orivorian/Docs
+repo_name: 7orivorian/docs
+repo_url: https://github.com/7orivorian/docs
 
 # Copyright
 copyright: Copyright &copy; 2024 <a href="https://github.com/7orivorian" target="_blank" rel="noopener">7orivorian</a>
@@ -117,7 +117,7 @@ plugins:
   - git-revision-date-localized:
       type: timeago
   - git-committers:
-      repository: 7orivorian/Docs
+      repository: 7orivorian/docs
       branch: master
   - minify:
       minify_html: true
