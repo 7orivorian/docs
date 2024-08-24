@@ -15,7 +15,7 @@ events.
     In this example, listeners are listening to **all** events, & will print the
     word "Hi" when they handle an event.
     
-    ??? info "Listener setup details."
+    ???+ info "Setup details."
     
         ```java
         EventBus eventBus = new EventBus();
@@ -51,32 +51,77 @@ events.
     In this example, listeners are listening to **all** events, & will print the
     word "Hi" when they handle an event.
     
-    ??? info "Setup details."
+    ???+ info "Setup details."
     
+        Event bus setup.
         ```java
         EventBus eventBus = new EventBus();
-        eventBus.register(new MyListener());
-        eventBus.register(new MyExtendedListener());
-        eventBus.register(new OtherListener());
+
+        Target target = // ...
+
+        eventBus.register(new MyListener(target));
+
+        eventBus.dispatch(new MyEvent("hi"));
+        eventBus.dispatch(new MyEvent.MyExtendedEvent("hi"));
+        eventBus.dispatch(new OtherEvent("hi"));
+        ```
+        (`MyExtendedEvent` extends `MyEvent`.)
+
+        `MyListener` class.
+        ```java
+        public class MyListener extends EventListener<MyEvent> {
+        
+            public MyListener(Target target) {
+                super(target);
+            }
+        
+            @Override
+            public void invoke(MyEvent event) {
+                System.out.println(event.message());
+            }
+        }
+        ```
+
+        `MyEvent` class.
+        ```java
+        public class MyEvent {
+        
+            private final String message;
+        
+            public MyEvent(String message) {
+                this.message = message;
+            }
+        
+            public String message() {
+                return message;
+            }
+        
+            public static class MyExtendedEvent extends MyEvent {
+        
+                public MyExtendedEvent(String message) {
+                    super(message);
+                }
+            }
+        }
         ```
     
-    If we dispatch our event normally, `"Hi"` will be printed {==3 times==}.
+    If we listen with a target of `all()`, `"Hi"` will be printed {==3 times==}.
     
     ``` java
-    eventBus.dispatch(new MyEvent());
+    Target.all()
     ```
     
-    If we fine target `MyListener.class`, `"Hi"` will only be printed
-    {==1 time==} because neither `MyExtendedListener` nor `OtherListener` are
+    If we fine target `MyEvent.class`, `"Hi"` will only be printed
+    {==1 time==} because neither `MyExtendedEvent` nor `OtherEvent` are
     included in this target.
     
     ``` java
-    eventBus.dispatch(new MyEvent(), Target.fine(MyListener.class));
+    Target.fine(MyListener.class)
     ```
     
-    However, if we _cascade_ target `MyListener.class`, `"Hi"` will be printed
-    {==2 times==} because `MyExtendedListener` extends `MyListener`.
+    However, if we _cascade_ target `MyEvent.class`, `"Hi"` will be printed
+    {==2 times==} because `MyExtendedEvent` extends `MyEvent`.
     
     ``` java
-    eventBus.dispatch(new MyEvent(), Target.cascade(MyListener.class));
+    Target.cascade(MyListener.class)
     ```
