@@ -1,35 +1,33 @@
 # Importing
 
-## Maven
+=== "Maven"
 
-* Include JitPack in your maven build file.
+    Include JitPack in your maven build file.
+    
+    ```xml
+    
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+    ```
 
-```xml
+    Add the dependency.
+    
+    ```xml
+    
+    <dependency>
+        <groupId>com.github.7orivorian</groupId>
+        <artifactId>Wraith</artifactId>
+        <version>4.0.0</version>
+    </dependency>
+    ```
 
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
-```
+=== "Gradle"
 
-* Add Wraith as a dependency.
-
-```xml
-
-<dependency>
-    <groupId>com.github.7orivorian</groupId>
-    <artifactId>Wraith</artifactId>
-    <version>3.3.0</version>
-</dependency>
-```
-
-## Gradle
-
-=== "Groovy"
-
-    * Add JitPack to your root `build.gradle` at the end of repositories
+    Add JitPack to your root `build.gradle` at the end of repositories.
 
     ```groovy
     repositories {
@@ -40,17 +38,17 @@
     }
     ```
     
-    * Add the dependency
+    Add the dependency.
     
     ```groovy
     dependencies {
-        implementation 'com.github.7orivorian:Wraith:3.3.0'
+        implementation 'com.github.7orivorian:Wraith:4.0.0'
     }
     ```
 
-=== "Kotlin"
+=== "Gradle (Kotlin)"
 
-    * Add JitPack to your root `build.gradle.kts` at the end of repositories
+    Add JitPack to your root `build.gradle.kts` at the end of repositories.
     
     ```groovy
     repositories {
@@ -61,15 +59,16 @@
     }
     ```
     
-    * Add the dependency
+    Add the dependency.
     
     ```groovy
     dependencies {
-        implementation("com.github.7orivorian:Wraith:3.3.0")
+        implementation("com.github.7orivorian:Wraith:4.0.0")
     }
     ```
 
-## Other
+=== "Jar"
 
-Download a `.jar` file
-from GitHub [releases](https://github.com/7orivorian/Wraith/releases/tag/3.3.0)
+    Wraith and its sources can be downloaded from 
+    [GitHub](https://github.com/7orivorian/Wraith/releases/latest).
+    ![Image title](../assets/wraith/download.png)

@@ -142,11 +142,12 @@ nav:
   - Home:
       - index.md
   - Wraith:
-      - wraith/overview.md
-      - wraith/importing.md
-      - wraith/building.md
-      - wraith/contributing.md
-      - wraith/license.md
+      - wraith.md
+      - Overview:
+          - wraith/importing.md
+          - wraith/building.md
+          - wraith/contributing.md
+          - wraith/license.md
       - Usage:
           - wraith/usage/subscribers.md
           - wraith/usage/targets.md

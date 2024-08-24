@@ -10,7 +10,7 @@
     public class ExampleListener extends EventListener<MessageEvent> {
     
         public ExampleListener() {
-            super(MessageEvent.class);
+            super(Target.fine(MessageEvent.class));
         }
     
         @Override
@@ -26,8 +26,8 @@
     
     ```java
     new LambdaEventListener<>(
-        MessageEvent.class,
-        event -> {//...}
+        Target.fine(MessageEvent.class),
+        event -> {/*...*/}
     )
     ```
 
@@ -35,7 +35,7 @@
 
 === "EventListener"
 
-    Listeners can be registered to a subsciber, 
+    Listeners can be registered to a subsciber.
     
     ```java hl_lines="6"
     EventBus eventBus = new EventBus();
@@ -46,7 +46,7 @@
     subscriber.registerListener(new ExampleListener());
     ```
 
-    or directly to an event bus.
+    Or directly to an event bus.
     ```java hl_lines="4"
     EventBus eventBus = new EventBus();
     
@@ -56,25 +56,29 @@
 
 === "LambdaEventListener"
 
-    Listeners can be registered to a subsciber, 
+    Listeners can be registered to a subsciber.
     
-    ```java hl_lines="5-8"
+    ```java hl_lines="6-9"
     EventBus eventBus = new EventBus();
     Subscriber subscriber = new Subscriber();
     eventBus.subscribe(subscriber);
 
-    subscriber.registerListener(new LambdaEventListener<>(
-            MessageEvent.class,
+    subscriber.registerListener(
+        new LambdaEventListener<>(
+            Target.fine(MessageEvent.class),
             event -> {/*...*/}
-    ));
+        )
+    );
     ```
 
-    or directly to an event bus.
-    ```java hl_lines="3-6"
+    Or directly to an event bus.
+    ```java hl_lines="4-7"
     EventBus eventBus = new EventBus();
     
-    eventBus.register(new LambdaEventListener<>(
-            MessageEvent.class,
+    eventBus.register(
+        new LambdaEventListener<>(
+            Target.fine(MessageEvent.class),
             event -> {/*...*/}
-    ));
+        )
+    );
     ```
