@@ -2,7 +2,7 @@
 
 Clone the GitHub repository and run the following:
 ```sh
-mvn package
+mvn clean package
 ```
 
 !!! tip
