@@ -142,8 +142,8 @@ nav:
   - Home:
       - index.md
   - Wraith:
-      - wraith.md
       - Overview:
+          - wraith/features.md
           - wraith/importing.md
           - wraith/building.md
           - wraith/contributing.md

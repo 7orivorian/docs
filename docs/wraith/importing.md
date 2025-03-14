@@ -2,16 +2,14 @@
 
 === "Maven"
 
-    Include JitPack in your maven build file.
+    Include JitPack in your maven build file (usually `pom.xml`).
     
     ```xml
     
-    <repositories>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
-    </repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
     ```
 
     Add the dependency.

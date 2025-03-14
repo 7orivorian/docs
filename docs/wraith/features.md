@@ -1,5 +1,5 @@
 ---
-title: Wraith
+title: Features
 project: wraith
 ---
 
