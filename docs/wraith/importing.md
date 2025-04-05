@@ -2,67 +2,49 @@
 
 === "Maven"
 
-    Include JitPack in your maven build file (usually `pom.xml`).
-    
-    ```xml
-    
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-    ```
-
-    Add the dependency.
-    
     ```xml
     
     <dependency>
         <groupId>dev.7ori</groupId>
-        <artifactId>Wraith</artifactId>
-        <version>4.0.0</version>
+        <artifactId>wraith</artifactId>
+        <version>4.1.0</version>
     </dependency>
     ```
 
 === "Gradle"
 
-    Add JitPack to your root `build.gradle` at the end of repositories.
+    ```groovy
+    implementation group: 'dev.7ori', name: 'wraith', version: '4.1.0'
+    ```
+
+=== "Gradle (short)"
 
     ```groovy
-    repositories {
-        //...
-        maven {
-            url 'https://jitpack.io'
-        }
-    }
-    ```
-    
-    Add the dependency.
-    
-    ```groovy
-    dependencies {
-        implementation 'dev.7ori:Wraith:4.0.0'
-    }
+    implementation 'dev.7ori:wraith:4.1.0'
     ```
 
 === "Gradle (Kotlin)"
 
-    Add JitPack to your root `build.gradle.kts` at the end of repositories.
-    
-    ```groovy
-    repositories {
-        //...
-        maven {
-            url = uri("https://jitpack.io")
-        }
-    }
+    ```kts
+    implementation("dev.7ori:wraith:4.1.0")
     ```
-    
-    Add the dependency.
-    
-    ```groovy
-    dependencies {
-        implementation("dev.7ori:Wraith:4.0.0")
-    }
+
+=== "sbt"
+
+    ```sbt
+    libraryDependencies += "dev.7ori" % "wraith" % "4.1.0"
+    ```
+
+=== "ivy"
+
+    ```xml
+    <dependency org="dev.7ori" name="wraith" rev="4.1.0"/>
+    ```
+
+=== "leiningen"
+
+    ```clj
+    [dev.7ori/wraith "4.1.0"]
     ```
 
 === "Jar"
